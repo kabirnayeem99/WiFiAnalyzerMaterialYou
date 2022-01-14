@@ -100,7 +100,11 @@ class MainActivity : AppCompatActivity(), NavigationMenuControl, OnSharedPrefere
         drawerNavigation.onConfigurationChanged(newConfig)
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (!permissionService.granted(requestCode, grantResults)) {
             finish()
         }
@@ -119,7 +123,8 @@ class MainActivity : AppCompatActivity(), NavigationMenuControl, OnSharedPrefere
     private val largeScreen: Boolean
         get() {
             val configuration = resources.configuration
-            val screenLayoutSize = configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK
+            val screenLayoutSize =
+                configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK
             return screenLayoutSize == Configuration.SCREENLAYOUT_SIZE_LARGE ||
                     screenLayoutSize == Configuration.SCREENLAYOUT_SIZE_XLARGE
         }
@@ -155,7 +160,8 @@ class MainActivity : AppCompatActivity(), NavigationMenuControl, OnSharedPrefere
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         closeDrawer()
-        val currentNavigationMenu = findOne(NavigationMenu.values(), menuItem.itemId, NavigationMenu.ACCESS_POINTS)
+        val currentNavigationMenu =
+            findOne(NavigationMenu.values(), menuItem.itemId, NavigationMenu.ACCESS_POINTS)
         currentNavigationMenu.activateNavigationMenu(this, menuItem)
         return true
     }
@@ -222,7 +228,8 @@ class MainActivity : AppCompatActivity(), NavigationMenuControl, OnSharedPrefere
 
     override fun currentMenuItem(): MenuItem = navigationMenuController.currentMenuItem()
 
-    override fun currentNavigationMenu(): NavigationMenu = navigationMenuController.currentNavigationMenu()
+    override fun currentNavigationMenu(): NavigationMenu =
+        navigationMenuController.currentNavigationMenu()
 
     override fun currentNavigationMenu(navigationMenu: NavigationMenu) {
         navigationMenuController.currentNavigationMenu(navigationMenu)

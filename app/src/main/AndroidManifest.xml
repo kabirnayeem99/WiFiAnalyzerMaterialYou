@@ -43,6 +43,7 @@
 
         <activity
             android:name=".SplashActivity"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -51,6 +52,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="true"
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"

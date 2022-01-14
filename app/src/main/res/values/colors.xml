@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ WiFiAnalyzer
   ~ Copyright (C) 2015 - 2022 VREM Software Development <VREMSoftwareDevelopment@gmail.com>
   ~
@@ -39,5 +38,5 @@
     <!-- green_500 -->
     <color name="success">#4CAF50</color>
     <!-- background -->
-    <color name="background">#616161</color>
+    <color name="background">#000</color>
 </resources>
